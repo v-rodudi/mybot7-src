@@ -45,11 +45,11 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
             if (confirm)
             {
                 this.count = 1;
-                await context.PostAsync("Reset count.");
+                await context.PostAsync("Reset count to 0.");
             }
             else
             {
-                await context.PostAsync("Did not reset count.");
+                await context.PostAsync($"Did not reset count. Current count is {this.count}.");
             }
             context.Wait(MessageReceivedAsync);
         }
